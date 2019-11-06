@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Master_Page_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        
+        <asp:ContentPlaceHolder id="title" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </title>
+    <style type="text/css">
+
+        ul
+        {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            background-color:#333;
+        }
+        li
+        {
+            float:left;
+        }
+        li a, .dropbtn
+        {
+            display:inline-block;
+            color:white;
+            text-align:center;
+            padding:14px 16px;
+            text-decoration:none;
+        }
+        li a:hover, dropdown:hover .dropbtn
+        {
+            background-color:red;
+        }
+        li.dropbtn
+        {
+            display:inline-block;
+        }
+        .dropdown-content
+        {
+            display:none;
+            position:absolute;
+            background-color:gray;
+            min-width:160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        dropdown-content a
+        {
+            color: black;
+            padding:12px 16px;
+            text-decoration:none;
+            display:block;
+            text-align:center;
+        }
+        .dropdown-content a:hover
+        {
+            background-color: black;
+        }
+        .dropdown:hover .dropdown-content
+        {
+            display:block;
+        }
+        ul.topnav li a.active
+        {
+            background-color:#4CAF50;  
+        }
+        li.right
+        {
+            float:right;
+            background-color:red;
+        }
+        a.active
+        {
+            background-color:#4CAF50;
+        }
+        #copyright
+        {
+            background-color:#333;
+            color: white;
+            height:5%;
+            width:100%;
+            padding:1px;
+            margin-top:380px;
+        }
+       
+        </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<%--    style="margin:20px; width:1050px; height:100%">--%>
+   <%-- width:100vw;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-content:center;--%>
+    
+    
+    <form id="form1" runat="server">
+    <div>
+        <ul>
+            <li><a class="active" href="Default.aspx">Home</a></li>
+            <li><a href="Account.aspx">Account</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Books</a>
+                <div class="dropdown-content">
+                <a href="Drama.aspx">Drama</a>
+                <a href="Humor.aspx">Humor</a>
+                <a href="Romance.aspx">Romance</a>
+            </div>
+            </li>
+            <li class="right"><a href="AboutUs.aspx">About Us</a></li>
+        </ul>
+
+        <asp:ContentPlaceHolder id="body" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+       
+
+
+        <div id="copyright">
+        <h4>All Rights are reserved by Gabriel M. & Kristjana Y. @2019</h4>
+    </div>
+    </div>
+    </form>
+</body>
+</html>
